@@ -14,6 +14,7 @@ class Wellcrafted_Support extends Wellcrafted_Plugin  {
 
     protected $use_styles = true;
     protected $use_scripts = true;
+    protected $support_email = 'maksim.sherstobitow@gmail.com';
 
     public function init() {
         new Wellcrafted_Support_Request_Post_Type();

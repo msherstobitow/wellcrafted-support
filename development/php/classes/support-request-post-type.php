@@ -132,10 +132,12 @@ class Wellcrafted_Support_Request_Post_Type extends Wellcrafted_Admin_Post_Type 
         }
 
         $installed_plugins = get_plugins();
+
         $developers_emails = [];
 
         if ( defined( 'THEME_DEVELOPER_EMAIL' ) ) {
-            $developers_emails[ __( 'Active theme developer', WELLCRAFTED_SUPPORT ) ] = THEME_DEVELOPER_EMAIL;
+            $developers_emails[ sprintf( __( '"%s" theme developer', WELLCRAFTED_SUPPORT ), wp_get_theme()->get( 'Name' ) ) ] = THEME_DEVELOPER_EMAIL;
+            $developers_emails = apply_filters( 'wellcrafted_support_developers_emails', $developers_emails );
         }
 
         require Wellcrafted_Support::instance()->get_plugin_path() . '/views/request-options-meta-box.php';
