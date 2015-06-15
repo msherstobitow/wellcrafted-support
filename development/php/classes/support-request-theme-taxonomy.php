@@ -1,5 +1,12 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
+/**
+ * @todo  PHPDoc
+ */
 class Wellcrafted_Support_Request_Theme_Taxonomy extends Wellcrafted_Admin_Taxonomy {
 
     protected $taxonomy = 'wc_support_request_tag';
