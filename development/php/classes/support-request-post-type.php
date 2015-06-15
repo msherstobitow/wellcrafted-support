@@ -1,5 +1,12 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
+/**
+ * @todo  PHPDoc
+ */
 class Wellcrafted_Support_Request_Post_Type extends Wellcrafted_Admin_Post_Type {
 
     protected $post_type = 'wc_support_request';
@@ -39,15 +46,12 @@ class Wellcrafted_Support_Request_Post_Type extends Wellcrafted_Admin_Post_Type 
              * Localize script for 'Publish' meta box
              */
             add_action( 'admin_enqueue_scripts', function() {
-                global $post_type;
-
                 Wellcrafted_Assets::localize_admin_script(
-                    WELLCRAFTED_SUPPORT . '_base_admin_script', 
+                    Wellcrafted_Support::registry()->plugin_system_name . '_base_admin_script', 
                     WELLCRAFTED_SUPPORT, 
                     [ 
                         'save' => __( 'Save', WELLCRAFTED_SUPPORT ),
-                        'save-n-send' => __( 'Save&amp;Send', WELLCRAFTED_SUPPORT ),
-                        'current_post_type' => $post_type
+                        'save-n-send' => __( 'Save&amp;Send', WELLCRAFTED_SUPPORT )
                     ]
                 );
             }, 0);
@@ -126,7 +130,13 @@ class Wellcrafted_Support_Request_Post_Type extends Wellcrafted_Admin_Post_Type 
         $sender_name = wellcrafted_array_value( $data, 'sender_name', wp_get_current_user()->display_name );
         $sender_email = wellcrafted_array_value( $data, 'sender_email', wp_get_current_user()->user_email );
         $receiver_email = wellcrafted_array_value( $data, 'receiver_email' );
+        $installed_themes = wp_get_themes([
+                                'errors' => null
+                            ]);
+
+        $active_theme_name = wp_get_theme()->get( 'Name' );
         $chosen_plugins = wellcrafted_array_value( $data, 'plugins_data' );
+        
         if ( ! is_array( $chosen_plugins ) ) {
             $chosen_plugins = [];
         }
@@ -136,7 +146,7 @@ class Wellcrafted_Support_Request_Post_Type extends Wellcrafted_Admin_Post_Type 
         $developers_emails = [];
 
         if ( defined( 'THEME_DEVELOPER_EMAIL' ) ) {
-            $developers_emails[ sprintf( __( '"%s" theme developer', WELLCRAFTED_SUPPORT ), wp_get_theme()->get( 'Name' ) ) ] = THEME_DEVELOPER_EMAIL;
+            $developers_emails[ sprintf( __( '"%s" theme developer', WELLCRAFTED_SUPPORT ), $active_theme_name ) ] = THEME_DEVELOPER_EMAIL;
             $developers_emails = apply_filters( 'wellcrafted_support_developers_emails', $developers_emails );
         }
 
@@ -178,6 +188,32 @@ class Wellcrafted_Support_Request_Post_Type extends Wellcrafted_Admin_Post_Type 
             $receiver_email = '';
         }
 
+        $product = isset( $data[ 'product' ] ) ? $data[ 'product' ] : '';
+        $product_data = [];
+
+        if ( $product ) {
+            list( $product_type, $product_name ) = explode( '::', $product );
+            if ( 'theme' === $product_type ) {
+                $installed_themes = wp_get_themes([
+                                        'errors' => null
+                                    ]);
+                if ( count( $installed_themes ) && isset( $installed_themes[ $product_name ] )) {
+                    $product_exists = true;
+                }
+            } else {
+                $installed_plugins = get_plugins();
+                if ( count( $installed_plugins ) && isset( $installed_plugins[ $product_name ] ) ) {
+                    $product_exists = true;
+                }
+            }
+
+            if ( $product_exists ) {
+                $product_data[ 'name' ] = $product_name;
+                $product_data[ 'type' ] = $product_type;
+            }
+
+        }
+
         $send_php_data = isset( $data[ 'php_data' ] ) ? (bool)$data[ 'php_data' ] : false;
         
         $send_theme_data = isset( $data[ 'theme_data' ] ) ? (bool)$data[ 'theme_data' ] : false;
@@ -205,6 +241,7 @@ class Wellcrafted_Support_Request_Post_Type extends Wellcrafted_Admin_Post_Type 
             'sender_email' => $sender_email,
             'receiver_email' => $receiver_email,
             'predefined_receiver' => $predefined_receiver,
+            'product' => $product_data,
             'send_php_data' => $send_php_data,
             'theme_data' => $theme_data,
             'plugins_data' => $plugins_data
