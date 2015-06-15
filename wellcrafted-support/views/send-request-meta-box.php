@@ -1,3 +1,12 @@
+<?php 
+/**
+ * @todo  PHPDoc
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+} 
+?>
 <?php if ( $saved ) { ?>
     <div class="wellcrafted_support_sendings_dates">
         <?php if ( $sent_requests_data ) { ?>

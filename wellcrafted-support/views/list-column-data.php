@@ -1,3 +1,12 @@
+<?php 
+/**
+ * @todo  PHPDoc
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+} 
+?>
 <b><?php _e( 'Sent date:', WELLCRAFTED_SUPPORT ) ?></b> 
 <?php if ( isset( $request_data[ 'time' ] ) ) { 
     echo date( get_option( 'date_format' ) . ' G:i:s', $request_data[ 'time' ] );

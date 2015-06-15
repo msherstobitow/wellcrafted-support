@@ -1,5 +1,50 @@
+<?php 
+/**
+ * @todo  PHPDoc
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+} 
+?>
 <table class="form-table">
     <tbody>
+        <tr>
+            <th>
+                <?php _e( 'Product', WELLCRAFTED_SUPPORT ) ?>
+            </th>
+            <td>
+                <select  name="<?php echo WELLCRAFTED_SUPPORT ?>[product]">
+                    <?php if ( $installed_themes || $installed_plugins ) { ?>
+                        <?php if ( $installed_themes ) { ?>
+                            <?php foreach( $installed_themes as $theme_name => $theme ) { ?>
+                                <?php $is_theme_active = $theme_name === $active_theme_name ?>
+                                <option value="theme::<?php echo $theme_name ?>"
+                                    <?php echo selected( $is_theme_active ) ?>
+                                    <?php echo $is_theme_active ? 'class="active"' : '' ?>>
+                                    <?php if ( $is_theme_active ) { ?> 
+                                        <b><?php echo $theme_name ?></b>
+                                    <?php } else { ?>
+                                        <?php echo $theme_name ?>
+                                    <?php } ?>
+                                </option>
+                            <?php } ?>
+                        <?php } ?>
+
+                        <?php if ( $installed_plugins ) { ?>
+                            <?php foreach( $installed_plugins as $plugin => $params ) { ?>
+                                <?php $is_plugin_active = is_plugin_active( $plugin ) ?>
+                                <option value="plugin::<?php echo $plugin ?>"
+                                    <?php echo $is_plugin_active ? 'class="active"' : '' ?>>
+                                    <?php echo $params[ 'Name' ] ?>
+                                </option>
+                            <?php } ?>
+                        <?php } ?>
+                    <?php } ?>
+                </select>
+            </td>
+        </tr>
+        
         <tr>
             <th>
                 <label for="<?php echo WELLCRAFTED_SUPPORT ?>_sender_name"><?php _e( 'Sender name', WELLCRAFTED_SUPPORT ) ?></label>
