@@ -1,5 +1,12 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
+/**
+ * @todo  PHPDoc
+ */
 class Wellcrafted_Support_Request {
 
     public static function send( $request_id ) {
@@ -33,9 +40,60 @@ class Wellcrafted_Support_Request {
 
             $message = '<h1>' . get_the_title( $request->ID ) . "</h1>\r\n\r\n";
             $message .= do_shortcode( $request->post_content ) . "\r\n\r\n";
+            $message .= '<hr>';
+
+            if ( is_array( $data[ 'product' ] ) && 
+                isset( $data[ 'product' ][ 'name'] ) && 
+                isset( $data[ 'product' ][ 'type' ] ) ) {
+                
+                $message .= '<h2>' . __( 'Product', WELLCRAFTED_SUPPORT ) . "</h2>\r\n\r\n";
+                
+                if ( 'theme' == $data[ 'product' ][ 'type' ] ) {
+                    $installed_themes = wp_get_themes( [
+                        'errors' => null
+                    ] );
+                    if ( isset( $installed_themes[ $data[ 'product'][ 'name' ] ] ) ) {
+                        $theme = $installed_themes[ $data[ 'product'][ 'name' ] ];
+
+                        $message .= '<ul>';
+                        $message .= '<li>' . __( 'Type', WELLCRAFTED_SUPPORT ) . ': ' . __( 'theme', WELLCRAFTED_SUPPORT ) . '</li>';
+                        $message .= '<li>' . __( 'Name', WELLCRAFTED_SUPPORT ) . ': ' . $theme->get( 'Name' ) . '</li>';
+                        $message .= '<li>' . __( 'URI', WELLCRAFTED_SUPPORT ) . ': ' . $theme->get( 'ThemeURI' ) . '</li>';
+                        $message .= '<li>' . __( 'Author', WELLCRAFTED_SUPPORT ) . ': ' . $theme->get( 'Author' ) . '</li>';
+                        $message .= '<li>' . __( 'Author URI', WELLCRAFTED_SUPPORT ) . ': <a href="' . $theme->get( 'AuthorURI' ) . '" target="_blank">' . $theme[ 'author_uri' ] . '</a></li>';
+                        $message .= '<li>' . __( 'Version', WELLCRAFTED_SUPPORT ) . ': ' . $theme->get( 'Version' ) . '</li>';
+                        $message .= '<li>' . __( 'Template', WELLCRAFTED_SUPPORT ) . ': ' . $theme->get( 'Template' ) . '</li>';
+                        $message .= '</ul>';
+                    }
+                } else {
+                    
+                    $installed_plugins = get_plugins();
+                    if ( isset( $installed_plugins[ $data[ 'product'][ 'name' ] ] ) ) {
+                        $plugin_data = $installed_plugins[ $data[ 'product'][ 'name' ] ];
+                        $is_active = is_plugin_active( $data[ 'product'][ 'name' ] );
+                        
+                        $message .= '<ul>';
+                        $message .= '<li>' . __( 'Type', WELLCRAFTED_SUPPORT ) . ': ' . __( 'plugin', WELLCRAFTED_SUPPORT ) . '</li>';
+                        $message .= '<li>' . __( 'Name', WELLCRAFTED_SUPPORT ) . ': ' . $plugin_data[ 'Name' ] . '</li>';
+                        $message .= '<li>' . __( 'Active', WELLCRAFTED_SUPPORT ) . ': ' . ( $is_active ? __( 'Yes', WELLCRAFTED_SUPPORT ) : __( 'No', WELLCRAFTED_SUPPORT ) ) . '</li>';
+                        $message .= '<li>' . __( 'Plugin URI', WELLCRAFTED_SUPPORT ) . ': ' . $plugin_data[ 'PluginURI' ] . '</li>';
+                        $message .= '<li>' . __( 'Version', WELLCRAFTED_SUPPORT ) . ': ' . $plugin_data[ 'Version' ] . '</li>';
+                        $message .= '<li>' . __( 'Description', WELLCRAFTED_SUPPORT ) . ': ' . $plugin_data[ 'Description' ] . '</li>';
+                        $message .= '<li>' . __( 'Author', WELLCRAFTED_SUPPORT ) . ': ' . $plugin_data[ 'Author' ] . '</li>';
+                        $message .= '<li>' . __( 'Author URI', WELLCRAFTED_SUPPORT ) . ': <a href="' . $plugin_data[ 'AuthorURI' ] . '" target="_blank">' . $plugin_data[ 'AuthorURI' ] . '</a></li>';
+                        $message .= '<li>' . __( 'Textdomain', WELLCRAFTED_SUPPORT ) . ': ' . $plugin_data[ 'TextDomain' ] . '</li>';
+                        $message .= '<li>' . __( 'Network', WELLCRAFTED_SUPPORT ) . ': ' . $plugin_data[ 'Network' ] . '</li>';
+                        $message .= '<li>' . __( 'Title', WELLCRAFTED_SUPPORT ) . ': ' . $plugin_data[ 'Title' ] . '</li>';
+                        $message .= '<li>' . __( 'Author Name', WELLCRAFTED_SUPPORT ) . ': ' . $plugin_data[ 'AuthorName' ] . '</li>';
+                        $message .= '</ul>';
+                    }
+                }
+            }
             
+            $message .= '<hr>';
+
             if ( $data[ 'theme_data' ] ) {
-                $message .= '<h2>' . __( 'Theme details', WELLCRAFTED_SUPPORT ) . ": </h2>\r\n";
+                $message .= '<h2>' . __( 'Active theme details', WELLCRAFTED_SUPPORT ) . ": </h2>\r\n";
                 $message .= '<ul>';
                 $message .= '<li>' . __( 'Name', WELLCRAFTED_SUPPORT ) . ': ' . $data[ 'theme_data' ][ 'name' ] . '</li>';
                 $message .= '<li>' . __( 'URI', WELLCRAFTED_SUPPORT ) . ': ' . $data[ 'theme_data' ][ 'uri' ] . '</li>';
@@ -89,7 +147,7 @@ class Wellcrafted_Support_Request {
             }
 
             add_filter( 'wp_mail_content_type', 'wellcrafted_set_html_content_type' );
-
+            
             $sent =  wp_mail( 
                 $receiver_email, 
                 sprintf( __( 'Support request: %s', WELLCRAFTED_SUPPORT ), get_the_title( $request->ID ) ), 
