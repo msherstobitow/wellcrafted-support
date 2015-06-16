@@ -4,8 +4,9 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
+    header('HTTP/1.0 403 Forbidden');
     exit;
-} 
+}
 ?>
 <?php if ( $saved ) { ?>
     <div class="wellcrafted_support_sendings_dates">
