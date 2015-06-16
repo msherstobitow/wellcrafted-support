@@ -1,17 +1,33 @@
 <?php
 
 if ( ! defined( 'ABSPATH' ) ) {
+    header('HTTP/1.0 403 Forbidden');
     exit;
 }
 
 /**
- * @todo  PHPDoc
+ * Wellcrafted_Support_Request_Post_Type class object creates a 'wc_support_request' admin post type.
+ * This post type represents a support request which can be sent to a receiver by email right from admin area.
+ *
+ * @author  Maksim Sherstobitow <maksim.sherstobitow@gmail.com>
+ * @version 1.0.0
+ * @package Wellcrafted\Support
  */
 class Wellcrafted_Support_Request_Post_Type extends Wellcrafted_Admin_Post_Type {
 
+    /**
+     * @todo  PHPDoc
+     */
     protected $post_type = 'wc_support_request';
+
+    /**
+     * @todo  PHPDoc
+     */
     protected $use_meta_boxes = true;
 
+    /**
+     * @todo  PHPDoc
+     */
     protected function init() {
         if ( is_admin() ) {
 
@@ -73,6 +89,9 @@ class Wellcrafted_Support_Request_Post_Type extends Wellcrafted_Admin_Post_Type 
 
     }
 
+    /**
+     * @todo  PHPDoc
+     */
     public function modify_columns( $columns ) {
         return wellcrafted_insert_to_array( 
             $columns, 
@@ -81,6 +100,9 @@ class Wellcrafted_Support_Request_Post_Type extends Wellcrafted_Admin_Post_Type 
         );
     }
 
+    /**
+     * @todo  PHPDoc
+     */
     public function edit_column( $column, $post_id ) {
         switch ( $column ) {
             case WELLCRAFTED_SUPPORT . '_request_data':
@@ -106,6 +128,9 @@ class Wellcrafted_Support_Request_Post_Type extends Wellcrafted_Admin_Post_Type 
         $this->edit_item_label = __( 'Edit request', WELLCRAFTED_SUPPORT );
     }
 
+    /**
+     * @todo  PHPDoc
+     */
     public function add_meta_boxes() {
         add_meta_box(
             WELLCRAFTED_SUPPORT . '_request_options',
@@ -117,6 +142,9 @@ class Wellcrafted_Support_Request_Post_Type extends Wellcrafted_Admin_Post_Type 
 
     }
 
+    /**
+     * @todo  PHPDoc
+     */
     public function request_options_meta_box() {
         $this->render_nonce( WELLCRAFTED_SUPPORT . '_request_options_nonce' );
 
@@ -153,6 +181,9 @@ class Wellcrafted_Support_Request_Post_Type extends Wellcrafted_Admin_Post_Type 
         require Wellcrafted_Support::instance()->get_plugin_path() . '/views/request-options-meta-box.php';
     }
 
+    /**
+     * @todo  PHPDoc
+     */
     protected function save_meta_boxes_data() {
         if ( ! $this->check_nonce( WELLCRAFTED_SUPPORT . '_request_options_nonce' ) ) {
             return;
@@ -263,6 +294,9 @@ class Wellcrafted_Support_Request_Post_Type extends Wellcrafted_Admin_Post_Type 
 
     }
 
+    /**
+     * @todo  PHPDoc
+     */
     protected function current_post_updated_messages( $messages ) {
         $messages[1] = __( 'Request saved', WELLCRAFTED_SUPPORT );
         return $messages;

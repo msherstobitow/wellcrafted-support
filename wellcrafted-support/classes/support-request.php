@@ -1,14 +1,22 @@
 <?php
 
 if ( ! defined( 'ABSPATH' ) ) {
+    header('HTTP/1.0 403 Forbidden');
     exit;
 }
 
 /**
- * @todo  PHPDoc
+ * Wellcrafted_Support_Request class checks and sends a suppotr request data.
+ *
+ * @author  Maksim Sherstobitow <maksim.sherstobitow@gmail.com>
+ * @version 1.0.0
+ * @package Wellcrafted\Support
  */
 class Wellcrafted_Support_Request {
 
+    /**
+     * @todo  PHPDoc
+     */
     public static function send( $request_id ) {
 
         $errors = [];

@@ -4,8 +4,10 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
+    header('HTTP/1.0 403 Forbidden');
     exit;
-} 
+}
+
 ?>
 <b><?php _e( 'Sent date:', WELLCRAFTED_SUPPORT ) ?></b> 
 <?php if ( isset( $request_data[ 'time' ] ) ) { 
