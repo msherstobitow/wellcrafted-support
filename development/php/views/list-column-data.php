@@ -1,6 +1,9 @@
 <?php 
 /**
- * @todo  PHPDoc
+ * Support request column markup.
+ * 
+ * @package Wellcrafted\Support
+ * @version  1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

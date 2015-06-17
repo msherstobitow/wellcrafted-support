@@ -15,7 +15,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Wellcrafted_Support_Request {
 
     /**
-     * @todo  PHPDoc
+     * Send a data of a support request.
+     * 
+     * @param  integer $request_id  Id of the request to send
+     * @return array                Errors occured on data processing and sending
      */
     public static function send( $request_id ) {
 

@@ -16,22 +16,28 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Wellcrafted_Support_Request_Theme_Taxonomy extends Wellcrafted_Admin_Taxonomy {
 
     /**
-     * @todo  PHPDoc
+     * The name of the taxonomy. Name should only contain lowercase letters and the underscore character, and not be more than 32 characters long (database structure restriction). 
+     * 
+     * @var string
      */
     protected $taxonomy = 'wc_support_request_tag';
 
     /**
-     * @todo  PHPDoc
+     * Name of the object type for the taxonomy object. Object-types can be built-in Post Type or any Custom Post Type that may be registered. 
+     * 
+     * @var string or array
      */
     protected $object_type = 'wc_support_request';
 
     /**
-     * @todo  PHPDoc
+     * Whether to allow automatic creation of taxonomy columns on associated post-types table. (Available since 3.5) 
+     * 
+     * @var boolean
      */
     protected $show_admin_column = true;
 
     /**
-     * @todo  PHPDoc
+     * Allows to set params before normalizing
      */
     protected function set_params() {
         $this->name_label = __( 'Tags' );

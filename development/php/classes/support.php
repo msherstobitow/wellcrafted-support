@@ -20,32 +20,51 @@ if ( ! defined( 'WELLCRAFTED_SUPPORT' ) ) {
 class Wellcrafted_Support extends Wellcrafted_Plugin  {
 
     /**
-     * @todo  PHPDoc
+     * Add into a class Singleton pattern ability
+     *
+     * @since  1.0.0
      */
     use Wellcrafted_Singleton_Trait;
 
     /**
-     * @todo  PHPDoc
+     * Whether to use plugin's default styles
+     * 
+     * The style should be placed at ./assets/css/style.css
+     * @var boolean
+     * @since  1.0.0
      */
     protected $use_styles = true;
 
     /**
-     * @todo  PHPDoc
+     * Whether to use plugin's default scripts
+     * 
+     * The script should be placed at ./assets/javascript/script.js
+     * 
+     * @var boolean
+     * @since  1.0.0
      */
     protected $use_scripts = true;
 
     /**
-     * @todo  PHPDoc
+     * A developer's support email. 
+     * 
+     * @since  1.0.0
      */
-    protected $support_email = 'maksim.sherstobitow@gmail.com';
+    protected $support_email = 'support_plugin.support@wllcrftd.com';
 
     /**
-     * @todo  PHPDoc
+     * A variable to keep a Wellcrefted_Registry class in.
+     * Note that each of child classes should define this variable to have a separate registry.
+     * 
+     * @var null
+     * @since  1.0.0
      */
     public static $registry = null;
 
     /**
-     * @todo  PHPDoc
+     * Init class object.
+     *
+     * @since  1.0.0
      */
     public function init() {
         new Wellcrafted_Support_Request_Post_Type();
