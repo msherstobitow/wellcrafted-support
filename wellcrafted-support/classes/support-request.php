@@ -19,6 +19,7 @@ class Wellcrafted_Support_Request {
      * 
      * @param  integer $request_id  Id of the request to send
      * @return array                Errors occured on data processing and sending
+     * @since  1.0.0
      */
     public static function send( $request_id ) {
 
