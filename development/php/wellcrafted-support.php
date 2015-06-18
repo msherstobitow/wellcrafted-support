@@ -27,9 +27,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since  1.0.0
  */
-add_action( 'wellcrafted_core_initilized', function() {
+add_action( 'wellcrafted_core_initilized', 'wellcrafted_support_initialize' );
+
+function wellcrafted_support_initialize() {
     require 'classes/support.php';
     Wellcrafted_Support::instance()->init();
-} );
+}
 
 
