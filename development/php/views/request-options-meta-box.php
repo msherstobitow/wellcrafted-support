@@ -52,7 +52,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         <?php if ( $developers_emails ) { ?>
             <tr>
                 <th>
-                    <label for="<?php echo WELLCRAFTED_SUPPORT ?>_predefined_email_receiver"><?php _e( 'You can choose a receiver from a list', WELLCRAFTED_SUPPORT ) ?></label>
+                    <label for="<?php echo WELLCRAFTED_SUPPORT ?>_predefined_email_receiver"><?php _e( 'Choose from a list to fill a previous field', WELLCRAFTED_SUPPORT ) ?></label>
                 </th>
                 <td>
                     <select name="<?php echo WELLCRAFTED_SUPPORT ?>[predefined_email_receiver]" 
