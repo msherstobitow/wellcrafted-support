@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Wellcrafted_Support_Request_Post_Type class object creates a 'wc_support_request' admin post type.
+ * Wellcrafted_Support_Request_Post_Type class object creates a 'wc_supportrequest' admin post type.
  * This post type represents a support request which can be sent to a receiver by email right from admin area.
  *
  * @author  Maksim Sherstobitow <maksim.sherstobitow@gmail.com>
@@ -21,7 +21,7 @@ class Wellcrafted_Support_Request_Post_Type extends Wellcrafted_Admin_Post_Type 
      * @var null
      * @since  1.0.0
      */
-    protected $post_type = 'wc_support_request';
+    protected $post_type = 'wc_supportrequest';
 
     /**
      * Whether to use meta boxes with this post type
@@ -32,13 +32,21 @@ class Wellcrafted_Support_Request_Post_Type extends Wellcrafted_Admin_Post_Type 
     protected $use_meta_boxes = true;
 
     /**
+     * The url to the icon to be used for this menu or the name of the icon from the iconfont
+     * 
+     * @var null
+     * @see http://melchoyce.github.io/dashicons/
+     * @since  1.0.0
+     */
+    protected $menu_icon = 'dashicons-sos';
+
+    /**
      * Init current class
      * 
      * @since  1.0.0
      */
     protected function init() {
         if ( is_admin() ) {
-
             /**
              * Add admin notices if errors are exists
              */
@@ -134,7 +142,7 @@ class Wellcrafted_Support_Request_Post_Type extends Wellcrafted_Admin_Post_Type 
      * @since  1.0.0
      */
     protected function set_params() {
-        $this->name_label = 'Support requests';
+        $this->name_label = __( 'Support requests', WELLCRAFTED_SUPPORT );
         $this->singular_name_label = __( 'Support', WELLCRAFTED_SUPPORT );
         $this->all_items_label = __( 'All requests', WELLCRAFTED_SUPPORT );
         $this->add_new_label = __( 'Create new', WELLCRAFTED_SUPPORT );

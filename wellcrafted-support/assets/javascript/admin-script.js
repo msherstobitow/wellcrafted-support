@@ -13,7 +13,7 @@
     /**
      *  Modify Publish meta box
      */
-    if ( 'wc_support_request' == window.wellcrafted_post_type.current_post_type ) {
+    if ( 'wc_supportrequest' == window.wellcrafted_post_type.current_post_type ) {
         $( '#minor-publishing-actions, .misc-pub-section' ).hide();
         $( '#submitdiv .hndle span' ).text( window.wellcrafted_support['save-n-send'] );
         $( '#publish' ).val( window.wellcrafted_support.save );

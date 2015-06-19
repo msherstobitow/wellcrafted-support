@@ -27,23 +27,24 @@ class Wellcrafted_Support extends Wellcrafted_Plugin  {
     use Wellcrafted_Singleton_Trait;
 
     /**
-     * Whether to use plugin's default styles
+     * Whether to use plugin's style
      * 
-     * The style should be placed at ./assets/css/style.css
+     * The style should be placed at ./assets/css/admin-style.css
+     * 
      * @var boolean
      * @since  1.0.0
      */
-    protected $use_styles = true;
+    protected $use_admin_style = true;
 
     /**
-     * Whether to use plugin's default scripts
+     * Whether to use plugin's script on backend
      * 
-     * The script should be placed at ./assets/javascript/script.js
+     * The script should be placed at ./assets/javascript/admin-script.js
      * 
      * @var boolean
      * @since  1.0.0
      */
-    protected $use_scripts = true;
+    protected $use_admin_script = true;
 
     /**
      * A developer's support email. 
