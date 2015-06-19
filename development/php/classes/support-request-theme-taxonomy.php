@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Wellcrafted_Support_Request_Theme_Taxonomy class object creates a 'wc_support_request_tag' admin taxonomy for 'wc_support_request' post type.
+ * Wellcrafted_Support_Request_Theme_Taxonomy class object creates a 'wc_supportrequesttag' admin taxonomy for 'wc_supportrequest' post type.
  * It uses just for tagging support requests.
  *
  * @author  Maksim Sherstobitow <maksim.sherstobitow@gmail.com>
@@ -21,7 +21,7 @@ class Wellcrafted_Support_Request_Theme_Taxonomy extends Wellcrafted_Admin_Taxon
      * @var string
      * @since  1.0.0
      */
-    protected $taxonomy = 'wc_support_request_tag';
+    protected $taxonomy = 'wc_supportrequesttag';
 
     /**
      * Name of the object type for the taxonomy object. Object-types can be built-in Post Type or any Custom Post Type that may be registered. 
@@ -29,7 +29,7 @@ class Wellcrafted_Support_Request_Theme_Taxonomy extends Wellcrafted_Admin_Taxon
      * @var string or array
      * @since  1.0.0
      */
-    protected $object_type = 'wc_support_request';
+    protected $object_type = 'wc_supportrequest';
 
     /**
      * Whether to allow automatic creation of taxonomy columns on associated post-types table. (Available since 3.5) 
