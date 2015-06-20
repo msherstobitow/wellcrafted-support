@@ -115,7 +115,7 @@ class Wellcrafted_Support_Request_Post_Type extends Wellcrafted_Admin_Post_Type 
         return wellcrafted_insert_to_array( 
             $columns, 
             'title', 
-            array( WELLCRAFTED_SUPPORT . '_request_data' => __( 'Request data', WELLCRAFTED_SUPPORT ) )
+            [ WELLCRAFTED_SUPPORT . '_request_data' => __( 'Request data', WELLCRAFTED_SUPPORT ) ]
         );
     }
 
