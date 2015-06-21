@@ -1,18 +1,20 @@
 <?php
 
+namespace Wellcrafted\Support;
+
 if ( ! defined( 'ABSPATH' ) ) {
     header('HTTP/1.0 403 Forbidden');
     exit;
 }
 
 /**
- * Wellcrafted_Support_Request class checks and sends a suppotr request data.
+ * Wellcrafted_Support_Request class checks and sends a support request data.
  *
  * @author  Maksim Sherstobitow <maksim.sherstobitow@gmail.com>
  * @version 1.0.0
  * @package Wellcrafted\Support
  */
-class Wellcrafted_Support_Request {
+class Request {
 
     /**
      * Send a data of a support request.

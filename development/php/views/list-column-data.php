@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php if ( isset( $request_data[ 'time' ] ) ) { 
     echo date( get_option( 'date_format' ) . ' G:i:s', $request_data[ 'time' ] );
 } else {
-    _e( 'Never', WELLCRAFTED_SUPPORT );
+    _e( 'never', WELLCRAFTED_SUPPORT );
 } ?>
 <br>
 <b><?php _e( 'Sender:', WELLCRAFTED_SUPPORT ) ?></b> 

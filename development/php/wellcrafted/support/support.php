@@ -1,5 +1,9 @@
 <?php
 
+namespace Wellcrafted\Support;
+
+use \Wellcrafted\Core\Plugin as Plugin;
+
 if ( ! defined( 'ABSPATH' ) ) {
     header('HTTP/1.0 403 Forbidden');
     exit;
@@ -17,14 +21,14 @@ if ( ! defined( 'WELLCRAFTED_SUPPORT' ) ) {
  * @version 1.0.0
  * @package Wellcrafted\Support
  */
-class Wellcrafted_Support extends Wellcrafted_Plugin  {
+class Support extends Plugin  {
 
     /**
      * Add into a class Singleton pattern ability
      *
      * @since  1.0.0
      */
-    use Wellcrafted_Singleton_Trait;
+    use \Wellcrafted\Core\Traits\Singleton;
 
     /**
      * Whether to use plugin's style
@@ -68,8 +72,8 @@ class Wellcrafted_Support extends Wellcrafted_Plugin  {
      * @since  1.0.0
      */
     public function init() {
-        new Wellcrafted_Support_Request_Post_Type();
-        new Wellcrafted_Support_Request_Theme_Taxonomy();
+        new Request\Post\Type();
+        new Request\Theme\Taxonomy();
     }
 
 } 

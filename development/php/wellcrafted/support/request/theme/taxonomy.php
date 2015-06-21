@@ -1,5 +1,7 @@
 <?php
 
+namespace Wellcrafted\Support\Request\Theme;
+
 if ( ! defined( 'ABSPATH' ) ) {
     header('HTTP/1.0 403 Forbidden');
     exit;
@@ -13,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @version 1.0.0
  * @package Wellcrafted\Support
  */
-class Wellcrafted_Support_Request_Theme_Taxonomy extends Wellcrafted_Admin_Taxonomy {
+class Taxonomy extends \Wellcrafted\Core\Admin\Taxonomy {
 
     /**
      * The name of the taxonomy. Name should only contain lowercase letters and the underscore character, and not be more than 32 characters long (database structure restriction). 

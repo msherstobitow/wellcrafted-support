@@ -1,5 +1,12 @@
 <?php
 
+namespace Wellcrafted\Support\Request\Post;
+
+use \Wellcrafted\Support\Support as Support;
+use \Wellcrafted\Support\Request as Request;
+use \Wellcrafted\Core\Assets as Assets;
+use \Wellcrafted\Core\Admin\Notices as Admin_Notices;
+
 if ( ! defined( 'ABSPATH' ) ) {
     header('HTTP/1.0 403 Forbidden');
     exit;
@@ -13,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @version 1.0.0
  * @package Wellcrafted\Support
  */
-class Wellcrafted_Support_Request_Post_Type extends Wellcrafted_Admin_Post_Type {
+class Type extends \Wellcrafted\Core\Post\Type\Admin {
 
     /**
      * Post type. (max. 20 characters, cannot contain capital letters or spaces) 
@@ -54,18 +61,18 @@ class Wellcrafted_Support_Request_Post_Type extends Wellcrafted_Admin_Post_Type 
             $sent_errors = wellcrafted_array_value( $_GET, WELLCRAFTED_SUPPORT . '_error', [] );
             if ( is_array( $sent_errors ) && ! empty( $sent_errors ) ) {
                 if ( in_array( WELLCRAFTED_SUPPORT . '_request_fill_sender', $sent_errors ) ) {
-                    Wellcrafted_Admin_Notices::error( __( 'You should fill a sender email to send a request.', WELLCRAFTED_SUPPORT ) );
+                    Admin_Notices::error( __( 'You should fill a sender email to send a request.', WELLCRAFTED_SUPPORT ) );
                 }
 
                 if ( in_array( WELLCRAFTED_SUPPORT . '_request_fill_receiver', $sent_errors ) ) {
-                    Wellcrafted_Admin_Notices::error( __( 'You should fill a receiver email to send a request.', WELLCRAFTED_SUPPORT ) );
+                    Admin_Notices::error( __( 'You should fill a receiver email to send a request.', WELLCRAFTED_SUPPORT ) );
                 }
 
                 if ( in_array( WELLCRAFTED_SUPPORT . '_request_wasnt_sent', $sent_errors ) ) {
-                    Wellcrafted_Admin_Notices::error( __( 'A request wasn\'t sent due to errors.', WELLCRAFTED_SUPPORT ) );
+                    Admin_Notices::error( __( 'A request wasn\'t sent due to errors.', WELLCRAFTED_SUPPORT ) );
                 }
             } else if ( $sent_success ) {
-                Wellcrafted_Admin_Notices::updated( 
+                Admin_Notices::updated( 
                     sprintf( 
                         '%s <b>%s</b>',
                         __( 'A request was successfully sent.', WELLCRAFTED_SUPPORT ),
@@ -78,8 +85,8 @@ class Wellcrafted_Support_Request_Post_Type extends Wellcrafted_Admin_Post_Type 
              * Localize script for 'Publish' meta box
              */
             add_action( 'admin_enqueue_scripts', function() {
-                Wellcrafted_Assets::localize_admin_script(
-                    Wellcrafted_Support::registry()->plugin_system_name . '_base_admin_script', 
+                Assets::localize_admin_script(
+                    Support::registry()->plugin_system_name . '_base_admin_script', 
                     WELLCRAFTED_SUPPORT, 
                     [ 
                         'save' => __( 'Save', WELLCRAFTED_SUPPORT ),
@@ -97,7 +104,7 @@ class Wellcrafted_Support_Request_Post_Type extends Wellcrafted_Admin_Post_Type 
                 if ( $this->post_type === $post_type ) {
                     $sent_requests_data = get_post_meta( $post->ID, '_' . WELLCRAFTED_SUPPORT . '_sent_requests_data' );
                     $saved = 'publish' === $post->post_status;
-                    require Wellcrafted_Support::instance()->get_plugin_path() . '/views/send-request-meta-box.php';
+                    require Support::instance()->get_plugin_path() . '/views/send-request-meta-box.php';
                 }
             }, 10, 3 );
 
@@ -130,7 +137,7 @@ class Wellcrafted_Support_Request_Post_Type extends Wellcrafted_Admin_Post_Type 
             case WELLCRAFTED_SUPPORT . '_request_data':
                 $request_data = get_post_meta( $post_id, '_' . WELLCRAFTED_SUPPORT . '_sent_requests_data', 1 );
                 $request_options = get_post_meta( $post_id, '_' . WELLCRAFTED_SUPPORT, 1 );
-                require Wellcrafted_Support::instance()->get_plugin_path() . '/views/list-column-data.php';
+                require Support::instance()->get_plugin_path() . '/views/list-column-data.php';
                 break;
             default: break;
         }
@@ -206,7 +213,7 @@ class Wellcrafted_Support_Request_Post_Type extends Wellcrafted_Admin_Post_Type 
             $developers_emails = apply_filters( 'wellcrafted_support_developers_emails', $developers_emails );
         }
 
-        require Wellcrafted_Support::instance()->get_plugin_path() . '/views/request-options-meta-box.php';
+        require Support::instance()->get_plugin_path() . '/views/request-options-meta-box.php';
     }
 
     /**
@@ -309,7 +316,7 @@ class Wellcrafted_Support_Request_Post_Type extends Wellcrafted_Admin_Post_Type 
         ] );
 
         if ( isset( $data[ 'send' ] ) ) {
-            $errors = Wellcrafted_Support_Request::send( $post->ID );
+            $errors = Request::send( $post->ID );
 
             if ( $errors ) {
                 add_filter( 'redirect_post_location', function( $location ) use( $errors ) {

@@ -30,8 +30,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 add_action( 'wellcrafted_core_initilized', 'wellcrafted_support_initialize' );
 
 function wellcrafted_support_initialize() {
-    require 'classes/support.php';
-    Wellcrafted_Support::instance()->init();
+    require dirname( __FILE__ ) . '/wellcrafted/support/support.php';
+    \Wellcrafted\Support\Support::instance()->init();
 }
 
 
