@@ -47,8 +47,8 @@ class Taxonomy extends \Wellcrafted\Core\Admin\Taxonomy {
      * @since  1.0.0
      */
     protected function set_params() {
-        $this->name_label = __( 'Tags' );
-        $this->singular_name_label = __( 'Tag' );
+        $this->name_label = __( 'Tags', WELLCRAFTED_SUPPORT );
+        $this->singular_name_label = __( 'Tag', WELLCRAFTED_SUPPORT );
     }
 
 }
