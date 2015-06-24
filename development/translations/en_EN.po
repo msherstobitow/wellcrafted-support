@@ -1,0 +1,297 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Wellcrafted Support\n"
+"POT-Creation-Date: 2015-06-24 20:31+0300\n"
+"PO-Revision-Date: 2015-06-24 20:31+0300\n"
+"Last-Translator: Maks Sherstobitow <maksim.sherstobitow@gmail.com>\n"
+"Language-Team: Maks Sherstobitow <maksim.sherstobitow@gmail.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.1\n"
+"X-Poedit-Basepath: ../php/\n"
+"X-Poedit-WPHeader: wellcrafted-support.php\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: views/list-column-data.php:15
+msgid "Sent date:"
+msgstr "Sent date:"
+
+#: views/list-column-data.php:19
+msgid "never"
+msgstr "never"
+
+#: views/list-column-data.php:22
+msgid "Sender:"
+msgstr "Sender:"
+
+#: views/list-column-data.php:33 views/list-column-data.php:38
+msgid "none"
+msgstr "none"
+
+#: views/list-column-data.php:37
+msgid "Receiver:"
+msgstr "Receiver:"
+
+#: views/request-options-meta-box.php:18
+msgid "Sender name"
+msgstr "Sender name"
+
+#: views/request-options-meta-box.php:30
+msgid "Sender email"
+msgstr "Sender email"
+
+#: views/request-options-meta-box.php:42
+msgid "Receiver email"
+msgstr "Receiver email"
+
+#: views/request-options-meta-box.php:55
+msgid "Choose from a list to fill a previous field"
+msgstr "Choose from a list to fill a previous field"
+
+#: views/request-options-meta-box.php:62
+msgid "Select email"
+msgstr "Select email"
+
+#: views/request-options-meta-box.php:72 wellcrafted/support/request.php:63
+msgid "Product"
+msgstr "Product"
+
+#: views/request-options-meta-box.php:107
+msgid "Send current theme data"
+msgstr "Send current theme data"
+
+#: views/request-options-meta-box.php:118
+#: views/request-options-meta-box.php:172 wellcrafted/support/request.php:92
+#: wellcrafted/support/request.php:141
+msgid "Yes"
+msgstr "Yes"
+
+#: views/request-options-meta-box.php:125
+msgid "Send plugins data"
+msgstr "Send plugins data"
+
+#: views/request-options-meta-box.php:133
+msgid "Select/deselect all"
+msgstr "Select/deselect all"
+
+#: views/request-options-meta-box.php:139 wellcrafted/support/request.php:92
+#: wellcrafted/support/request.php:141
+msgid "Active"
+msgstr "Active"
+
+#: views/request-options-meta-box.php:158
+msgid "Send PHP data"
+msgstr "Send PHP data"
+
+#: views/request-options-meta-box.php:165
+msgid "Unfortunatelty, this option is not available on your hosting"
+msgstr "Unfortunatelty, this option is not available on your hosting"
+
+#: views/request-options-meta-box.php:174
+msgid "Be careful, it can be not safe!"
+msgstr "Be careful, it can be not safe!"
+
+#: views/send-request-meta-box.php:19
+msgid "Previous sendings"
+msgstr "Previous sendings"
+
+#: views/send-request-meta-box.php:26
+msgid "There were no sendings yet"
+msgstr "There were no sendings yet"
+
+#: views/send-request-meta-box.php:33
+msgid "Send"
+msgstr "Send"
+
+#: views/send-request-meta-box.php:38
+msgid "You should save first to send."
+msgstr "You should save first to send."
+
+#: wellcrafted/support/request.php:73 wellcrafted/support/request.php:90
+msgid "Type"
+msgstr "Type"
+
+#: wellcrafted/support/request.php:73
+msgid "theme"
+msgstr "theme"
+
+#: wellcrafted/support/request.php:74 wellcrafted/support/request.php:91
+#: wellcrafted/support/request.php:112
+msgid "Name"
+msgstr "Name"
+
+#: wellcrafted/support/request.php:75 wellcrafted/support/request.php:113
+msgid "URI"
+msgstr "URI"
+
+#: wellcrafted/support/request.php:76 wellcrafted/support/request.php:96
+#: wellcrafted/support/request.php:114 wellcrafted/support/request.php:145
+msgid "Author"
+msgstr "Author"
+
+#: wellcrafted/support/request.php:77 wellcrafted/support/request.php:97
+#: wellcrafted/support/request.php:115 wellcrafted/support/request.php:146
+msgid "Author URI"
+msgstr "Author URI"
+
+#: wellcrafted/support/request.php:78 wellcrafted/support/request.php:94
+#: wellcrafted/support/request.php:116 wellcrafted/support/request.php:143
+msgid "Version"
+msgstr "Version"
+
+#: wellcrafted/support/request.php:79 wellcrafted/support/request.php:117
+msgid "Template"
+msgstr "Template"
+
+#: wellcrafted/support/request.php:90
+msgid "plugin"
+msgstr "plugin"
+
+#: wellcrafted/support/request.php:92 wellcrafted/support/request.php:141
+msgid "No"
+msgstr "No"
+
+#: wellcrafted/support/request.php:93 wellcrafted/support/request.php:142
+msgid "Plugin URI"
+msgstr "Plugin URI"
+
+#: wellcrafted/support/request.php:95 wellcrafted/support/request.php:144
+msgid "Description"
+msgstr "Description"
+
+#: wellcrafted/support/request.php:98 wellcrafted/support/request.php:147
+msgid "Textdomain"
+msgstr "Textdomain"
+
+#: wellcrafted/support/request.php:99 wellcrafted/support/request.php:148
+msgid "Network"
+msgstr "Network"
+
+#: wellcrafted/support/request.php:100 wellcrafted/support/request.php:149
+msgid "Title"
+msgstr "Title"
+
+#: wellcrafted/support/request.php:101 wellcrafted/support/request.php:150
+msgid "Author Name"
+msgstr "Author Name"
+
+#: wellcrafted/support/request.php:110
+msgid "Active theme details"
+msgstr "Active theme details"
+
+#: wellcrafted/support/request.php:124
+msgid "Installed plugins"
+msgstr "Installed plugins"
+
+#: wellcrafted/support/request.php:167
+#, php-format
+msgid "Support request: %s"
+msgstr "Support request: %s"
+
+#: wellcrafted/support/request/post/type.php:64
+msgid "You should fill a sender email to send a request."
+msgstr "You should fill a sender email to send a request."
+
+#: wellcrafted/support/request/post/type.php:68
+msgid "You should fill a receiver email to send a request."
+msgstr "You should fill a receiver email to send a request."
+
+#: wellcrafted/support/request/post/type.php:72
+msgid "A request wasn't sent due to errors."
+msgstr "A request wasn't sent due to errors."
+
+#: wellcrafted/support/request/post/type.php:78
+msgid "A request was successfully sent."
+msgstr "A request was successfully sent."
+
+#: wellcrafted/support/request/post/type.php:79
+msgid "It doesn't mean that the receiver will get the email."
+msgstr "It doesn't mean that the receiver will get the email."
+
+#: wellcrafted/support/request/post/type.php:92
+msgid "Save"
+msgstr "Save"
+
+#: wellcrafted/support/request/post/type.php:93
+msgid "Save&amp;Send"
+msgstr "Save&amp;Send"
+
+#: wellcrafted/support/request/post/type.php:125
+msgid "Request data"
+msgstr "Request data"
+
+#: wellcrafted/support/request/post/type.php:152
+msgid "Support requests"
+msgstr "Support requests"
+
+#: wellcrafted/support/request/post/type.php:153
+#: wellcrafted/support/request/post/type.php:158
+msgid "Support"
+msgstr "Support"
+
+#: wellcrafted/support/request/post/type.php:154
+msgid "All requests"
+msgstr "All requests"
+
+#: wellcrafted/support/request/post/type.php:155
+msgid "Create new"
+msgstr "Create new"
+
+#: wellcrafted/support/request/post/type.php:156
+msgid "Create new request"
+msgstr "Create new request"
+
+#: wellcrafted/support/request/post/type.php:157
+msgid "New request"
+msgstr "New request"
+
+#: wellcrafted/support/request/post/type.php:159
+msgid "Edit request"
+msgstr "Edit request"
+
+#: wellcrafted/support/request/post/type.php:170
+msgid "Request options"
+msgstr "Request options"
+
+#: wellcrafted/support/request/post/type.php:212
+#, php-format
+msgid "\"%s\" theme developer"
+msgstr "\"%s\" theme developer"
+
+#: wellcrafted/support/request/post/type.php:342
+msgid "Request saved"
+msgstr "Request saved"
+
+#: wellcrafted/support/request/theme/taxonomy.php:50
+msgid "Tags"
+msgstr "Tags"
+
+#: wellcrafted/support/request/theme/taxonomy.php:51
+msgid "Tag"
+msgstr "Tag"
+
+#. Plugin Name of the plugin/theme
+msgid "Wellcrafted Support"
+msgstr "Wellcrafted Support"
+
+#. Plugin URI of the plugin/theme
+msgid "http://msherstobitow.com/plugins/wellcraftedcore"
+msgstr "http://msherstobitow.com/plugins/wellcraftedcore"
+
+#. Description of the plugin/theme
+msgid "The plugin allows to send detailed support requests to themes/plugins authors."
+msgstr "The plugin allows to send detailed support requests to themes/plugins authors."
+
+#. Author of the plugin/theme
+msgid "Maksim Sherstobitow"
+msgstr "Maksim Sherstobitow"
+
+#. Author URI of the plugin/theme
+msgid "http://msherstobitow.com"
+msgstr "http://msherstobitow.com"

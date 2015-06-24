@@ -1,0 +1,341 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Wellcrafted Support\n"
+"POT-Creation-Date: 2015-06-24 21:30+0300\n"
+"PO-Revision-Date: 2015-06-24 21:34+0300\n"
+"Last-Translator: Maks Sherstobitow <maksim.sherstobitow@gmail.com>\n"
+"Language-Team: Maks Sherstobitow <maksim.sherstobitow@gmail.com>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.1\n"
+"X-Poedit-Basepath: ../php/\n"
+"X-Poedit-WPHeader: wellcrafted-support.php\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: views/list-column-data.php:15
+msgid "Sent date:"
+msgstr "Дата отправки:"
+
+#: views/list-column-data.php:19
+msgid "never"
+msgstr "никогда"
+
+#: views/list-column-data.php:22
+msgid "Sender:"
+msgstr "Отправитель:"
+
+#: views/list-column-data.php:33 views/list-column-data.php:38
+msgid "none"
+msgstr "нет"
+
+#: views/list-column-data.php:37
+msgid "Receiver:"
+msgstr "Получатель:"
+
+#: views/request-options-meta-box.php:18
+msgid "Sender name"
+msgstr "Имя отправителя"
+
+#: views/request-options-meta-box.php:30
+msgid "Sender email"
+msgstr "E-mail отправителя"
+
+#: views/request-options-meta-box.php:42
+msgid "Receiver email"
+msgstr "E-mail получателя"
+
+#: views/request-options-meta-box.php:55
+msgid "Choose from a list to fill a previous field"
+msgstr "Выберите получателя из списка"
+
+#: views/request-options-meta-box.php:62
+msgid "Select email"
+msgstr "Выберите емейл"
+
+#: views/request-options-meta-box.php:72 wellcrafted/support/request.php:63
+msgid "Product"
+msgstr "Продукт"
+
+#: views/request-options-meta-box.php:107
+msgid "Send current theme data"
+msgstr "Отправить данные текущей темы"
+
+#: views/request-options-meta-box.php:118
+#: views/request-options-meta-box.php:172 wellcrafted/support/request.php:92
+#: wellcrafted/support/request.php:141
+msgid "Yes"
+msgstr "Да"
+
+#: views/request-options-meta-box.php:125
+msgid "Send plugins data"
+msgstr "Отправить данные плагинов"
+
+#: views/request-options-meta-box.php:133
+msgid "Select/deselect all"
+msgstr "Выбрать/Отменить все"
+
+#: views/request-options-meta-box.php:139 wellcrafted/support/request.php:92
+#: wellcrafted/support/request.php:141
+msgid "Active"
+msgstr "Активный"
+
+#: views/request-options-meta-box.php:158
+msgid "Send PHP data"
+msgstr "Отправка данных о PHP"
+
+#: views/request-options-meta-box.php:165
+msgid "Unfortunately, this option is not available on your hosting"
+msgstr "К сожалению эта опция не доступна на вашем хостинге"
+
+#: views/request-options-meta-box.php:174
+msgid "Be careful, it can be not safe!"
+msgstr "Будьте осторожны, это может быть небезопасно!"
+
+#: views/send-request-meta-box.php:19
+msgid "Previous sendings"
+msgstr "Предыдущие отправления"
+
+#: views/send-request-meta-box.php:26
+msgid "There were no sendings yet"
+msgstr "Пока не было отправлений"
+
+#: views/send-request-meta-box.php:33
+msgid "Send"
+msgstr "Отправить"
+
+#: views/send-request-meta-box.php:38
+msgid "You should save first to send."
+msgstr "Необходимо сначала сохранить, чтобы отправить."
+
+#: wellcrafted/support/request.php:73 wellcrafted/support/request.php:90
+msgid "Type"
+msgstr "Тип"
+
+#: wellcrafted/support/request.php:73
+msgid "theme"
+msgstr "тема"
+
+#: wellcrafted/support/request.php:74 wellcrafted/support/request.php:91
+#: wellcrafted/support/request.php:112
+msgid "Name"
+msgstr "Имя"
+
+#: wellcrafted/support/request.php:75 wellcrafted/support/request.php:113
+msgid "URI"
+msgstr "URI"
+
+#: wellcrafted/support/request.php:76 wellcrafted/support/request.php:96
+#: wellcrafted/support/request.php:114 wellcrafted/support/request.php:145
+msgid "Author"
+msgstr "Автор"
+
+#: wellcrafted/support/request.php:77 wellcrafted/support/request.php:97
+#: wellcrafted/support/request.php:115 wellcrafted/support/request.php:146
+msgid "Author URI"
+msgstr "Адрес автора"
+
+#: wellcrafted/support/request.php:78 wellcrafted/support/request.php:94
+#: wellcrafted/support/request.php:116 wellcrafted/support/request.php:143
+msgid "Version"
+msgstr "Версия"
+
+#: wellcrafted/support/request.php:79 wellcrafted/support/request.php:117
+msgid "Template"
+msgstr "Шаблон"
+
+#: wellcrafted/support/request.php:90
+msgid "plugin"
+msgstr "плагин"
+
+#: wellcrafted/support/request.php:92 wellcrafted/support/request.php:141
+msgid "No"
+msgstr "Нет"
+
+#: wellcrafted/support/request.php:93 wellcrafted/support/request.php:142
+msgid "Plugin URI"
+msgstr "Адрес плагина"
+
+#: wellcrafted/support/request.php:95 wellcrafted/support/request.php:144
+msgid "Description"
+msgstr "Описание"
+
+#: wellcrafted/support/request.php:98 wellcrafted/support/request.php:147
+msgid "Textdomain"
+msgstr "Текстовый домен"
+
+#: wellcrafted/support/request.php:99 wellcrafted/support/request.php:148
+msgid "Network"
+msgstr "Сеть"
+
+#: wellcrafted/support/request.php:100 wellcrafted/support/request.php:149
+msgid "Title"
+msgstr "Заголовок"
+
+#: wellcrafted/support/request.php:101 wellcrafted/support/request.php:150
+msgid "Author Name"
+msgstr "Имя автора"
+
+#: wellcrafted/support/request.php:110
+msgid "Active theme details"
+msgstr "Данные текущей темы"
+
+#: wellcrafted/support/request.php:124
+msgid "Installed plugins"
+msgstr "Установленные плагины"
+
+#: wellcrafted/support/request.php:167
+#, php-format
+msgid "Support request: %s"
+msgstr "Запрос в службу поддержки: %s"
+
+#: wellcrafted/support/request/post/type.php:64
+msgid "You should fill a sender email to send a request."
+msgstr "Вы должны ввести данные отправителя, чтобы отправить запрос."
+
+#: wellcrafted/support/request/post/type.php:68
+msgid "You should fill a receiver email to send a request."
+msgstr "Вы должны заполнить получателя сообщения, чтобы отправить запрос."
+
+#: wellcrafted/support/request/post/type.php:72
+msgid "A request wasn't sent due to errors."
+msgstr "Запрос не был отправлен из-за ошибок."
+
+#: wellcrafted/support/request/post/type.php:78
+msgid "A request was successfully sent."
+msgstr "Запрос был успешно отправлен."
+
+#: wellcrafted/support/request/post/type.php:79
+msgid "It doesn't mean that the receiver will get the email."
+msgstr "Это не значит, что получатель получит сообщение."
+
+#: wellcrafted/support/request/post/type.php:92
+msgid "Save"
+msgstr "Сохранить"
+
+#: wellcrafted/support/request/post/type.php:93
+msgid "Save&amp;Send"
+msgstr "Сохранить и отправить"
+
+#: wellcrafted/support/request/post/type.php:125
+msgid "Request data"
+msgstr "Данные запроса"
+
+#: wellcrafted/support/request/post/type.php:152
+msgid "Support requests"
+msgstr "Запросы на поддержку"
+
+#: wellcrafted/support/request/post/type.php:153
+#: wellcrafted/support/request/post/type.php:158
+msgid "Support"
+msgstr "Поддержка"
+
+#: wellcrafted/support/request/post/type.php:154
+msgid "All requests"
+msgstr "Все запросы"
+
+#: wellcrafted/support/request/post/type.php:155
+msgid "Create new"
+msgstr "Создать запрос"
+
+#: wellcrafted/support/request/post/type.php:156
+msgid "Create new request"
+msgstr "Создать новый запрос"
+
+#: wellcrafted/support/request/post/type.php:157
+msgid "New request"
+msgstr "Новый запрос"
+
+#: wellcrafted/support/request/post/type.php:159
+msgid "Edit request"
+msgstr "Изменить запрос"
+
+#: wellcrafted/support/request/post/type.php:170
+msgid "Request options"
+msgstr "Параметры запроса"
+
+#: wellcrafted/support/request/post/type.php:212
+#, php-format
+msgid "\"%s\" theme developer"
+msgstr "Автор темы «%s»"
+
+#: wellcrafted/support/request/post/type.php:342
+msgid "Request saved"
+msgstr "Запрос сохранен"
+
+#: wellcrafted/support/request/post/type.php:355
+#, php-format
+msgid "%s requests updated."
+msgid_plural "%s requests updated."
+msgstr[0] "%s запрос обновлен."
+msgstr[1] "%s запроса обновлены."
+msgstr[2] "%s запросов обновлены."
+
+#: wellcrafted/support/request/post/type.php:356
+msgid "1 request not updated, somebody is editing it."
+msgstr "1 запрос не был обновлен, кто-то его сейчас редактирует."
+
+#: wellcrafted/support/request/post/type.php:357
+#, php-format
+msgid "%s request not updated, somebody is editing it."
+msgid_plural "%s requests not updated, somebody is editing them."
+msgstr[0] "%s запрос не обновлен, кто-то редактирует его."
+msgstr[1] "%s запроса не обновлены, кто-то редактирует их."
+msgstr[2] "%s запросов не обновлены, кто-то редактирует их."
+
+#: wellcrafted/support/request/post/type.php:358
+#, php-format
+msgid "%s request permanently deleted."
+msgid_plural "%s requests permanently deleted."
+msgstr[0] "%s запрос удален навсегда."
+msgstr[1] "%s запроса удалены навсегда."
+msgstr[2] "%s запросов удалены навсегда."
+
+#: wellcrafted/support/request/post/type.php:359
+#, php-format
+msgid "%s request moved to the Trash."
+msgid_plural "%s requests moved to the Trash."
+msgstr[0] "%s запрос был перемещен в корзину"
+msgstr[1] "%s запроса были перемещено в корзину."
+msgstr[2] "%s запросов было перемещено в корзину."
+
+#: wellcrafted/support/request/post/type.php:360
+#, php-format
+msgid "%s request restored from the Trash."
+msgid_plural "%s requests restored from the Trash."
+msgstr[0] "%s запрос восстановлен из корзины."
+msgstr[1] "%s запроса восстановлены из корзины."
+msgstr[2] "%s запросов восстановлены из корзины."
+
+#: wellcrafted/support/request/theme/taxonomy.php:50
+msgid "Tags"
+msgstr "Метки"
+
+#: wellcrafted/support/request/theme/taxonomy.php:51
+msgid "Tag"
+msgstr "Метка"
+
+#. Plugin Name of the plugin/theme
+msgid "Wellcrafted Support"
+msgstr "Wellcrafted Support"
+
+#. Plugin URI of the plugin/theme
+msgid "http://msherstobitow.com/plugins/wellcraftedcore"
+msgstr "http://msherstobitow.com/plugins/wellcraftedcore"
+
+#. Description of the plugin/theme
+msgid "The plugin allows to send detailed support requests to themes/plugins authors."
+msgstr "The plugin allows to send detailed support requests to themes/plugins authors."
+
+#. Author of the plugin/theme
+msgid "Maksim Sherstobitow"
+msgstr "Максим Шерстобитов"
+
+#. Author URI of the plugin/theme
+msgid "http://msherstobitow.com"
+msgstr "http://msherstobitow.com"
