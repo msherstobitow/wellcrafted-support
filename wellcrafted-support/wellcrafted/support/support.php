@@ -76,4 +76,8 @@ class Support extends Plugin  {
         new Request\Theme\Taxonomy();
     }
 
+    protected function textdomain() {
+        return WELLCRAFTED_SUPPORT;
+    }
+
 } 

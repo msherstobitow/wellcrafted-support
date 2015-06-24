@@ -339,7 +339,26 @@ class Type extends \Wellcrafted\Core\Post\Type\Admin {
      * @since  1.0.0
      */
     protected function current_post_updated_messages( $messages ) {
-        $messages[1] = __( 'Request saved', WELLCRAFTED_SUPPORT );
+        $messages[1] = $messages[7] = __( 'Request saved', WELLCRAFTED_SUPPORT );
+        return $messages;
+    }
+
+    /**
+     * Allows to modify bulk messages of a post type.
+     * 
+     * @param  array $messages Messages array
+     * @return array           Modified messages array
+     * @since  1.0.0
+     */
+    protected function current_bulk_post_updated_messages( $messages, $counts ) {
+        $messages = [
+            'updated'   => _n( '%s requests updated.', '%s requests updated.', $counts['updated'], WELLCRAFTED_SUPPORT ),
+            'locked'    => ( 1 == $counts['locked'] ) ? __( '1 request not updated, somebody is editing it.', WELLCRAFTED_SUPPORT ) :
+                               _n( '%s request not updated, somebody is editing it.', '%s requests not updated, somebody is editing them.', $counts['locked'], WELLCRAFTED_SUPPORT ),
+            'deleted'   => _n( '%s request permanently deleted.', '%s requests permanently deleted.', $counts['deleted'], WELLCRAFTED_SUPPORT ),
+            'trashed'   => _n( '%s request moved to the Trash.', '%s requests moved to the Trash.', $counts['trashed'], WELLCRAFTED_SUPPORT ),
+            'untrashed' => _n( '%s request restored from the Trash.', '%s requests restored from the Trash.', $counts['untrashed'], WELLCRAFTED_SUPPORT ),
+        ];
         return $messages;
     }
 
