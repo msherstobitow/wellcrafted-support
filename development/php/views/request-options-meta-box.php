@@ -162,7 +162,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                     name="<?php echo WELLCRAFTED_SUPPORT ?>[php_data]"
                     value="0"?>
                 <?php if ( wellcrafted_is_function_disabled( 'phpinfo' ) ) { ?>
-                    <?php _e( 'Unfortunatelty, this option is not available on your hosting', WELLCRAFTED_SUPPORT ) ?>
+                    <?php _e( 'Unfortunately, this option is not available on your hosting', WELLCRAFTED_SUPPORT ) ?>
                 <?php } else { ?>
                     <label>
                         <input type="checkbox" 
