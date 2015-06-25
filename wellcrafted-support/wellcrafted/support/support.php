@@ -76,6 +76,11 @@ class Support extends Plugin  {
         new Request\Theme\Taxonomy();
     }
 
+    /**
+     * Return plugin's textdomain
+     * @return string textdomain
+     * @since  1.0.0
+     */
     protected function textdomain() {
         return WELLCRAFTED_SUPPORT;
     }
